@@ -1,46 +1,48 @@
-import 'package:flutter/material.dart';
+//ホームページの中身を記述する
+//ホームページは、ロボットの情報、天気の情報、選択のおすすめ度、ロボ稼働ボタンを表示する
+//順次Textを変更していく
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+import 'package:flutter/material.dart';
+import 'package:landry_helpli/components/button.dart';
+import 'package:landry_helpli/components/recommendation.dart';
+import 'package:landry_helpli/components/robot_status.dart';
+
+import 'package:landry_helpli/components/whether.dart';
+
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Home> createState() => _HomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _HomeState extends State<Home> {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+  Widget build(BuildContext context) => Expanded(
+        child: Scaffold(
+          body: Container(
+            color: Colors.blue,
+            padding:
+                const EdgeInsets.only(top: 64, bottom: 32, left: 16, right: 16),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  RobotStatus(),
+                  Whether(),
+                  Flexible(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: const <Widget>[
+                        Recommendation(),
+                        Button(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
+      );
 }

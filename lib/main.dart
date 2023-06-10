@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:landry_helpli/components/layout.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:landry_helpli/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'うんち',
+      title: 'main',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Layout(title: "unchi"),
+      home: const Home(),
     );
   }
 }
