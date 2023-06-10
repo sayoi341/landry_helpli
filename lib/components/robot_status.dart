@@ -1,0 +1,38 @@
+// ロボの状態を表示
+
+import 'package:flutter/material.dart';
+
+class RobotStatus extends StatefulWidget {
+  const RobotStatus({Key? key}) : super(key: key);
+
+  @override
+  State<RobotStatus> createState() => _RobotStatusState();
+}
+
+class _RobotStatusState extends State<RobotStatus> {
+  @override
+  Widget build(BuildContext context) => Flexible(
+        flex: 1,
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.all(16),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            color: Colors.white,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const <Widget>[
+              Text(
+                "現在の状態",
+                style: TextStyle(fontSize: 16),
+              ),
+              Text(
+                "待機中",
+                style: TextStyle(fontSize: 32),
+              ),
+            ],
+          ),
+        ),
+      );
+}

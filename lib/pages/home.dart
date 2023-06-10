@@ -3,6 +3,11 @@
 //順次Textを変更していく
 
 import 'package:flutter/material.dart';
+import 'package:landry_helpli/components/button.dart';
+import 'package:landry_helpli/components/recommendation.dart';
+import 'package:landry_helpli/components/robot_status.dart';
+
+import 'package:landry_helpli/components/whether.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -15,24 +20,24 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) => Expanded(
         child: Scaffold(
-          appBar: AppBar(
-            title: const Text('LANDRY HELPLI'),
-            toolbarHeight: 56,
-          ),
           body: Container(
-            margin: const EdgeInsets.all(24),
+            color: Colors.blue,
+            padding:
+                const EdgeInsets.only(top: 64, bottom: 32, left: 16, right: 16),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  const Text("ロボの情報"),
-                  const Text("天気の情報"),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const <Widget>[
-                      Text("選択のおすすめ度"),
-                      Text("ロボ稼働ボタン"),
-                    ],
+                  RobotStatus(),
+                  Whether(),
+                  Flexible(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: const <Widget>[
+                        Recommendation(),
+                        Button(),
+                      ],
+                    ),
                   ),
                 ],
               ),
