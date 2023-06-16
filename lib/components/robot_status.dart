@@ -19,7 +19,7 @@ class _RobotStatusState extends State<RobotStatus> {
             borderRadius: BorderRadius.all(Radius.circular(10)),
             color: Colors.white,
           ),
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(

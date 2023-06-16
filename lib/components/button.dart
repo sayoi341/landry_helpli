@@ -17,17 +17,17 @@ class _ButtonState extends State<Button> {
   }
 
   @override
-  Widget build(BuildContext context) => Expanded(
+  Widget build(BuildContext context) => Flexible(
         child: Center(
           child: OutlinedButton(
-            style: OutlinedButton.styleFrom(
-                backgroundColor: const Color(0xFFFFFDD7),
-                foregroundColor: const Color(000000),
+            style: OutlinedButton.styleFrom (
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 )),
             onPressed: _toggleAble,
-            child: _able ? const Text("true") : const Text("false"),
+            child: _able ? const Text("畳みスタート") : const Text("畳み中"),
           ),
         ),
       );

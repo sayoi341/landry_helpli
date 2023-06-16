@@ -25,7 +25,7 @@ class _WhetherState extends State<Whether> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              const Column(
+              Column(
                 children: <Widget>[
                   Text(
                     "現在の天気",
@@ -43,7 +43,7 @@ class _WhetherState extends State<Whether> {
                   ),
                   Container(
                     margin: const EdgeInsets.all(8),
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         Column(
@@ -75,7 +75,7 @@ class _WhetherState extends State<Whether> {
                   ),
                 ],
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Column(
