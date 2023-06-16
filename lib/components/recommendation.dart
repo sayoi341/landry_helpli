@@ -11,7 +11,8 @@ class Recommendation extends StatefulWidget {
 
 class _RecommendationState extends State<Recommendation> {
   @override
-  Widget build(BuildContext context) => Expanded(
+  Widget build(BuildContext context) => Flexible(
+        flex: 1,
         child: Container(
           width: double.infinity,
           margin: const EdgeInsets.all(16),
@@ -19,10 +20,10 @@ class _RecommendationState extends State<Recommendation> {
             borderRadius: BorderRadius.all(Radius.circular(10)),
             color: Colors.white,
           ),
-          child: Column(
+          child: const Column(
             children: <Widget>[
-              const Text("洗濯のおすすめ度"),
-              const Text("おすすめ度"),
+              Text("洗濯のおすすめ度"),
+              Text("おすすめ度"),
             ],
           ),
         ),
