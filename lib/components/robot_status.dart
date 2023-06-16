@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class RobotStatus extends StatefulWidget {
-  const RobotStatus({Key? key}) : super(key: key);
+  const RobotStatus({super.key});
 
   @override
   State<RobotStatus> createState() => _RobotStatusState();

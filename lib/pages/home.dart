@@ -22,9 +22,8 @@ class _HomeState extends State<Home> {
         child: Scaffold(
           body: Container(
             color: Colors.blue,
-            padding:
-                const EdgeInsets.only(top: 64, bottom: 32, left: 16, right: 16),
-            child: Center(
+            padding: const EdgeInsets.all(16),
+            child: const Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -33,7 +32,7 @@ class _HomeState extends State<Home> {
                   Flexible(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Recommendation(),
                         Button(),
                       ],
