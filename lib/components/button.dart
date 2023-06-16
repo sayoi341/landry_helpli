@@ -17,22 +17,18 @@ class _ButtonState extends State<Button> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: OutlinedButton(
-          child: _able ?
-            Text("true"):Text("false"),
+  Widget build(BuildContext context) => Expanded(
+        child: Center(
+          child: OutlinedButton(
             style: OutlinedButton.styleFrom(
-              backgroundColor: Color(0xFFFFFDD7),
-              foregroundColor: Color(000000),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              )
-            ),
-          onPressed: _toggleAble,
-          )
-      ),
-    );
-  }
+                backgroundColor: const Color(0xFFFFFDD7),
+                foregroundColor: const Color(000000),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                )),
+            onPressed: _toggleAble,
+            child: _able ? const Text("true") : const Text("false"),
+          ),
+        ),
+      );
 }

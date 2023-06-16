@@ -18,30 +18,30 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
-  Widget build(BuildContext context) => Expanded(
-        child: Scaffold(
-          body: Container(
-            color: Colors.blue,
-            padding: const EdgeInsets.all(16),
-            child: const Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  RobotStatus(),
-                  Whether(),
-                  Flexible(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Recommendation(),
-                        Button(),
-                      ],
-                    ),
-                  ),
-                ],
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.blue,
+        padding: const EdgeInsets.all(16),
+        child: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RobotStatus(),
+              Whether(),
+              Flexible(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Recommendation(),
+                    Button(title: "a"),
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
         ),
-      );
+      ),
+    );
+  }
 }
