@@ -16,6 +16,7 @@ class _RecommendationState extends State<Recommendation> {
         child: Container(
           width: double.infinity,
           margin: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(8),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             color: Colors.white,
