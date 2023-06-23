@@ -32,6 +32,7 @@ class _HomeState extends State<Home> {
               Flexible(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Recommendation(),
                     Button(),
