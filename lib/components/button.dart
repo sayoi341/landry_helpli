@@ -15,7 +15,7 @@ class Button extends HookConsumerWidget {
             child: OutlinedButton(
             style: OutlinedButton.styleFrom ( 
               minimumSize: const Size(double.infinity, double.infinity),
-                backgroundColor: Colors.white,
+                backgroundColor: Color.fromRGBO(255, 253, 215, 1),
                 foregroundColor: Colors.black,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),

@@ -18,7 +18,7 @@ class RobotStatus extends HookConsumerWidget {
           margin: const EdgeInsets.all(16),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10)),
-            color: Colors.white,
+            color: Color.fromRGBO(255, 253, 215, 1),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
