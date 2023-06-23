@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:landry_helpli/models/RobotState.dart';
 
-class Button extends StatefulWidget {
-  const Button({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<Button> createState() => _ButtonState();
-}
-
-class _ButtonState extends State<Button> {
-  bool _able = true;
-  void _toggleAble() {
-    setState(() {
-      _able = !_able;
-    });
-  }
+class Button extends HookConsumerWidget {
+  const Button({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Flexible(
+  Widget build(BuildContext context, WidgetRef ref) {
+      bool s = ref.watch(robotstateProvider);
+
+      return Flexible(
         child: Center(
           child: OutlinedButton(
             style: OutlinedButton.styleFrom (
@@ -26,9 +18,14 @@ class _ButtonState extends State<Button> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 )),
-            onPressed: _toggleAble,
-            child: _able ? const Text("畳みスタート") : const Text("畳み中"),
+            onPressed: () {
+              ref.read(robotstateProvider.notifier).state=false;
+            },
+            child: s ? const Text("畳みスタート") : const Text("畳み中"),
           ),
         ),
       );
+  } 
 }
+
+

@@ -3,7 +3,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:landry_helpli/pages/home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    ));
 }
 
 class MyApp extends StatelessWidget {

@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Recommendation(),
-                    Button(title: "a"),
+                    Button(),
                   ],
                 ),
               ),
