@@ -29,9 +29,9 @@ class _HomeState extends State<Home> {
 Future<void> getData() async {
   try {
     var response = await http.get(Uri.https(
-        'www.googleapis.com',
-        '/books/v1/volumes',
-        {'q': '{Flutter}', 'maxResults': '40', 'langRestrict': 'ja'}));
+        'api.weatherapi.com',
+        '/v1/forecast.json',
+        {'key': 'd18ca1360171448ba1663104233006', 'q': 'Mito', 'days': '1', 'api': 'no', 'alerts': 'no'}));
     var jsonResponse = _response(response);
      print(jsonResponse);
   } catch (_) {
