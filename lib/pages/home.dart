@@ -2,6 +2,9 @@
 //ホームページは、ロボットの情報、天気の情報、選択のおすすめ度、ロボ稼働ボタンを表示する
 //順次Textを変更していく
 
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:landry_helpli/components/button.dart';
 import 'package:landry_helpli/components/recommendation.dart';
@@ -66,7 +69,7 @@ class _HomeState extends State<Home> {
       body: Container(
         color: Colors.blue,
         padding: const EdgeInsets.all(16),
-        child: const Center(
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
@@ -75,9 +78,10 @@ class _HomeState extends State<Home> {
               Flexible(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Recommendation(),
-                    Button(title: "a"),
+                    Button(),
                   ],
                 ),
               ),

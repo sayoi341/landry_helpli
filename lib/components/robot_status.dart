@@ -1,37 +1,42 @@
 // ロボの状態を表示
 
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class RobotStatus extends StatefulWidget {
-  const RobotStatus({super.key});
+import 'package:landry_helpli/models/RobotState.dart';
+
+class RobotStatus extends HookConsumerWidget {
+  const RobotStatus({Key? key}) : super(key: key);
 
   @override
-  State<RobotStatus> createState() => _RobotStatusState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+      bool s = ref.watch(robotstateProvider);
 
-class _RobotStatusState extends State<RobotStatus> {
-  @override
-  Widget build(BuildContext context) => Flexible(
+      return Flexible(
         child: Container(
           width: double.infinity,
           margin: const EdgeInsets.all(16),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10)),
-            color: Colors.white,
+            color: Color.fromRGBO(255, 253, 215, 1),
           ),
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 "現在の状態",
                 style: TextStyle(fontSize: 16),
               ),
               Text(
-                "待機中",
+                s ? "待機中" : "実行中" ,
                 style: TextStyle(fontSize: 32),
               ),
             ],
           ),
         ),
       );
+  } 
+  
+  
+  
 }
