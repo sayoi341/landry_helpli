@@ -41,11 +41,9 @@ class WhetherState extends ConsumerState<Whether> {
       final l = jsonResponse.map((dynamic e) {
         String time = e['time'];
         double temp_c = e['temp_c'];
-        Whethers condition;
+        Whethers condition = e['condition']['text'] as Whethers;
 
-        print('log: ${e['condition']['text']}');
-
-        return WhetherData(time, temp_c, Whethers.sunny);
+        return WhetherData(time, temp_c, condition);
       }).cast<WhetherData>();
 
       ref.read(whetherStateProvider.notifier).state = [...l];
