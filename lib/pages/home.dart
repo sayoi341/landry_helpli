@@ -35,7 +35,7 @@ class HomeState extends ConsumerState<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Recommendation(),
+                    //Recommendation(),
                     Button(),
                   ],
                 ),
