@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:landry_helpli/models/robotStats.dart';
+import 'package:landry_helpli/models/robot_model.dart';
 
 class RobotStatus extends HookConsumerWidget {
   const RobotStatus({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class RobotStatus extends HookConsumerWidget {
             ),
             Text(
               s ? "待機中" : "実行中",
-              style: TextStyle(fontSize: 32),
+              style: const TextStyle(fontSize: 32),
             ),
           ],
         ),

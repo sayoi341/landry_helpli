@@ -7,10 +7,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:landry_helpli/components/button.dart';
 import 'package:landry_helpli/components/recommendation.dart';
-import 'package:landry_helpli/components/robotStatus.dart';
+import 'package:landry_helpli/components/robot_status.dart';
 import 'package:landry_helpli/components/whether.dart';
-
-import 'package:landry_helpli/models/whetherState.dart';
 
 class Home extends StatefulHookConsumerWidget {
   const Home({Key? key}) : super(key: key);
@@ -26,7 +24,7 @@ class HomeState extends ConsumerState<Home> {
       body: Container(
         color: Colors.blue,
         padding: const EdgeInsets.all(16),
-        child: Center(
+        child: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
