@@ -24,7 +24,7 @@ class HomeState extends ConsumerState<Home> {
       body: Container(
         color: Colors.blue,
         padding: const EdgeInsets.all(16),
-        child: const Center(
+        child:  Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[

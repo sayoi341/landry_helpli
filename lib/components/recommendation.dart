@@ -20,7 +20,7 @@ class _RecommendationState extends State<Recommendation> {
             borderRadius: BorderRadius.all(Radius.circular(10)),
             color: Color.fromRGBO(255, 253, 215, 1),
           ),
-          child: const Column(
+          child: Column(
             children: <Widget>[
               Text("洗濯のおすすめ度"),
               Text("おすすめ度"),

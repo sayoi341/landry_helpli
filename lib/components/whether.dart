@@ -123,23 +123,6 @@ class WhetherState extends ConsumerState<Whether> {
                 ),
               ],
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Text("花粉情報"),
-                    Text("少", style: TextStyle(fontSize: 32)),
-                  ],
-                ),
-                Column(
-                  children: <Widget>[
-                    Text("黄砂情報"),
-                    Text("少", style: TextStyle(fontSize: 32)),
-                  ],
-                ),
-              ],
-            ),
           ],
         ),
       ),
