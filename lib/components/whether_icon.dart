@@ -1,7 +1,7 @@
 // 天気のアイコン
 
 import 'package:flutter/material.dart';
-import 'package:landry_helpli/models/whetherState.dart';
+import 'package:landry_helpli/models/whether_model.dart';
 
 class WhetherIcon extends StatelessWidget {
   const WhetherIcon({Key? key, required this.whether}) : super(key: key);
@@ -153,7 +153,7 @@ class WhetherIcon extends StatelessWidget {
     } else if (whether == Whethers.Moderate_or_heavy_snow_with_thunder) {
       return const Image(
           image: AssetImage("images/395.png"), width: 50, height: 50);
-    }else {
+    } else {
       return const Icon(
         color: Color.fromARGB(255, 0, 0, 0),
         size: 50,

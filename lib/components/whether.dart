@@ -2,9 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import 'package:landry_helpli/components/whetherIcon.dart';
-import 'package:landry_helpli/models/whetherState.dart';
+import 'package:landry_helpli/components/whether_icon.dart';
+import 'package:landry_helpli/models/whether_model.dart';
 
 import 'package:landry_helpli/apis/api.dart';
 
@@ -26,9 +27,9 @@ class WhetherState extends ConsumerState<Whether> {
 
   Future<void> getData() async {
     try {
-      var response =
-          await http.get(Uri.https('api.weatherapi.com', '/v1/forecast.json', {
-        'key': 'd18ca1360171448ba1663104233006',
+      var response = await http
+          .get(Uri.https(dotenv.get('W_ENDPOINT'), '/v1/forecast.json', {
+        'key': dotenv.get('W_KEY'),
         'q': 'Mito',
         'days': '1',
         'api': 'no',
@@ -41,7 +42,8 @@ class WhetherState extends ConsumerState<Whether> {
       final l = jsonResponse.map((dynamic e) {
         String time = e['time'];
         double temp_c = e['temp_c'];
-        Whethers condition = e['condition']['text'] as Whethers;
+        Whethers condition =
+            Whethers.values.byName(e['condition']['text'].replaceAll(" ", "_"));
 
         return WhetherData(time, temp_c, condition);
       }).cast<WhetherData>();
@@ -121,7 +123,7 @@ class WhetherState extends ConsumerState<Whether> {
                 ),
               ],
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Column(
